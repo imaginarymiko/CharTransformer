@@ -27,7 +27,7 @@ int main(int argc, char** argv) {
             direction = argv[3];
         } else if (argc == 1) {
             std::cout << "Please provide the text you wish to convert" << std::endl;
-            std::cin >> text;
+            std::getline(std::cin, text);
             std::cout << "Please specify the language of the text" << std::endl;
             std::cin.clear();
             std::cin >> language;
@@ -39,6 +39,7 @@ int main(int argc, char** argv) {
                 std::cin >> language;
                 lang = processName(language);
             }
+            t.setText(text, lang);
             std::cout << "Please specify the direction of the conversion" << std::endl;
             std::cin >> direction;
             while (d == Direction::Null) {
