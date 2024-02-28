@@ -208,8 +208,8 @@ std::string TransformText::russianCyrillicToLatin() const {
     std::string converted = "";
     size_t i = 0;
     while (i < length) {
-        std::wstring ws(1, this->text[i]);
-        std::string s(ws.begin(), ws.end());
+        wchar_t ch = this->text[i];
+        std::string s(1, ch);
         if (InvertedRussianCyrillic.find(s) == InvertedRussianCyrillic.end()) {
             converted += s;
         } else {
